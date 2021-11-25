@@ -19,6 +19,7 @@ you can run on a virtual android emulator to play the game.
 
 [Android Studio and Android SDK](https://developer.android.com/studio). You can follow the instructions [here](https://reactnative.dev/docs/environment-setup) under "React Native CLI Quickstart" section 1. Install Android Studio 
 
+The emulator version used on development is API 29 and android 10 on Pixel 2 device
 
 
 ## installation 
@@ -43,6 +44,10 @@ you can go ahead and run the game in your android emulator.
 
 ```
 npm start
+
+# or start and clear cache whcih might be helpful
+
+npm start -- --reset-cache
 ```
 
 in case of failure that it is missing expo. You can install expo by ruunning the command. and then starting the game again.
