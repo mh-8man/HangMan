@@ -35,13 +35,11 @@ your need to install npm dependencies.
 
 ```
 npm install
-
 ```
 you can go ahead and run the game in your android emulator.
 
 ```
 npm start
-
 ```
 
 in case of failure that it is missing expo. You can install expo by ruunning the command. and then starting the game again.
