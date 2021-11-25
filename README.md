@@ -1,8 +1,11 @@
 # HangMan
 HangMang game written in React Native.
 
+About the game:
 You have to guess a word, by guessing one letter a time.
 You get 6 wrong guesses before loosing.
+
+The game supports two languages English and Norwegian Bokmål.
 
 
 you can run on a virtual android emulator to play the game.
@@ -52,3 +55,19 @@ npm start
 Expo will open a new tap on your Browser. From that browser press on run android emulator. This should open the emulator and run the game. 
 
 Have fun!  
+
+
+## Game play
+
+when running the game you begin in the home/start screen.
+
+![start screen](./assets/Capture_home.JPG)
+
+You can change the language by pressing on the picker on the top bar. This changes the game text language and the language of the word you have to guess.
+Then you press start to begin the game
+
+![game screen](./assets/Capture_game.JPG)
+
+you can always read how to play the game by pressing the the info button on the upper right corner.
+
+![game info](./assets/Capture_info.JPG)
