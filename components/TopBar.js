@@ -2,6 +2,12 @@ import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import {Picker} from '@react-native-picker/picker';
 
+/**
+ * top bar menue have info butoon to show info and language picker
+ * 
+ * @param {the sent props} props 
+ * @returns 
+ */
 const TopBar = (props) => {
 
     const onInfo = () =>{
@@ -10,7 +16,7 @@ const TopBar = (props) => {
   
     return (
         <View style={styles.container}>
-        {/* <View style={{flexDirection: "row", paddingRight: 30 }}> */}
+      
         <Text style={{fontWeight: "bold"}} >{props.lang == "en" ? " langage : " : " språk : "}</Text>    
         <View style={{ backgroundColor: "#FFF"}}>
             <Picker
@@ -22,11 +28,11 @@ const TopBar = (props) => {
             <Picker.Item label="Norsk" value="no" />
             </Picker>
         </View>
-        {/* </View> */}
+        
         <Button 
         title = "info"
         onPress = { () => {props.setShowModal(true)} }
-        style = {{width: 30, padding: 5, backgroundColor: "#FFF"}}
+        style = {{width: 30, padding: 5}}
         />
         
         </View>
@@ -38,7 +44,7 @@ const styles = StyleSheet.create({
   container: {
     alignSelf: 'stretch',
     height: 52,
-    flexDirection: 'row', // row
+    flexDirection: 'row',
     backgroundColor: '#FFE8E5',
     alignItems: 'center',
     justifyContent: 'space-between', // center, space-around

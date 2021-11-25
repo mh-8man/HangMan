@@ -3,10 +3,22 @@ import { StyleSheet, Text, View, Button } from 'react-native';
 import Game from "../components/Game"
 import {getWord} from "../assets/words"
 
+/**
+ * home screen
+ * also have game component that is conditionaly rendered on the press on start butoon
+ * 
+ * @param {language} props 
+ * @returns 
+ */
 const Start = (props) => {
-    const [startGame, setStartGame] = useState(false);
-    const [word, setword] = useState(false);
+    const [startGame, setStartGame] = useState(false); // controls conditionaly rendering the game screen
+    const [word, setword] = useState(false); // the word to be guessed
 
+    /**
+     * function to handle on press start
+     * gets a random word of the chosen language from words.js
+     * and shows game screen
+     */
     const handleStartPress = () => {
         setword(getWord(props.lang));
         setStartGame(true);
@@ -44,8 +56,6 @@ const styles = StyleSheet.create({
       justifyContent: "center",
       backgroundColor: '#eee',
 
-  },
-  centered:{
   }
 });
 

@@ -1,6 +1,13 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
 
+/**
+ * conditionally renders the corresbonding image of the hangman depending
+ * on the number of wrong guesses
+ * 
+ * @param {the wrong letter list} props 
+ * @returns 
+ */
 const Figure = (props) => {
 
   return (

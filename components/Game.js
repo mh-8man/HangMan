@@ -3,15 +3,24 @@ import { StyleSheet, Text, View, Button, KeyboardAvoidingView, Platform, TextInp
 import Letter from "../components/Letter"
 import Figure from "../components/Figure"
 
-
+/**
+ * game screen
+ * shows wrong letters hangman fugure and right letters
+ * 
+ * @param {word, language and set state of game screen start} props 
+ * @returns 
+ */
 const Game = (props) => {
-    const [inputLetter, setInputLetter] = useState();
-    const [wrongLetters, setWrongLetters] = useState([]);
-    const [corLetters, setCorLetters] = useState([]);
+    const [inputLetter, setInputLetter] = useState(); // input text letter
+    const [wrongLetters, setWrongLetters] = useState([]); // worong letters to be used for condionaly rendering the figure
+    const [corLetters, setCorLetters] = useState([]); // right letters for conditionally rendering the guessed letters
 
-
+    /**
+     * function to handle on submitting the letter
+     */
     const handleInputLetter = () => {
         Keyboard.dismiss();
+        // in case correct guess
         if(props.word.includes(inputLetter)){
             setCorLetters([...corLetters, inputLetter]);
             setInputLetter(null);
@@ -19,10 +28,16 @@ const Game = (props) => {
             setWrongLetters([...wrongLetters, inputLetter]);
             setInputLetter(null);
         }
+        //empting the input field
         setInputLetter(null);
+        // check if end game
         handleEndGame();
     }
 
+    /**
+     * function that checks if end game is reached
+     * shows allerts if ir is, and sends to the start screen
+     */
     const handleEndGame = () => {
         if(wrongLetters.length == 5){
             Alert.alert(props.lang ==="en" ? "You lost!" : "Du tapte!", props.lang ==="en" ? "Game over good luck next time." : "Game over. Lykke til nest gang.", [
@@ -44,6 +59,7 @@ const Game = (props) => {
         <View style={styles.topH}>
 
             {
+                // mapping over the worong letters
                 wrongLetters.map( (item, index) => {
                     return <Letter key = {index}  corLetters = {corLetters} show={true} letter={item} />
                 })
@@ -56,6 +72,7 @@ const Game = (props) => {
         <Text style={{fontWeight: "bold"}}>{props.lang ==="en" ? "Your word: " : "Ditt ord: "}</Text>
         <View style={styles.bottomH}>
             {
+                // mapping over the word to be guessed
                 props.word.split("").map((item, index) => {
                     return <Letter  key={index} corLetters = {corLetters} show={false} letter = {item} />
                 })

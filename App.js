@@ -3,11 +3,21 @@ import { StyleSheet, Picker, Text, View, Modal, TouchableOpacity } from 'react-n
 import TopBar from "./components/TopBar";
 import Start from "./components/Start";
 
+/**
+ * main app shows the start screen and top bar menue
+ * 
+ * modal is sat up so that it would show the info as popup that is closed when press any where on screen 
+ * 
+ * @returns 
+ */
 export default function App() {
-  const [lang, setLang] = useState("en");
-  const [showModal, setShowModal] = useState(false);
+  const [lang, setLang] = useState("en"); // language state
+  const [showModal, setShowModal] = useState(false); // controlls if to show modal
+  
+  /**
+   * screen have top bar menue, start screen and modal
+   */
   return (
-
     <View style={styles.container}>
       <TopBar lang = {lang} setLang = {setLang} setShowModal = {setShowModal}  />
       <Start lang = {lang}/>
@@ -17,7 +27,7 @@ export default function App() {
       transparent={true}
       visible={showModal}
       onRequestClose={() => {
-        setModalVisible(false);
+        setShowModal(false);
       }}
       >
         <TouchableOpacity style = {{backgroundColor: "#000000aa", flex:1}} onPress={() => setShowModal(false)} >
