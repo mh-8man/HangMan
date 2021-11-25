@@ -11,7 +11,9 @@ you can run on a virtual android emulator to play the game.
 ## Prerequisites 
 
 [NodeJs](https://nodejs.org/en/)
+
 [Java SE Development Kit (JDK)](https://openjdk.java.net/projects/jdk8/)
+
 [Android Studio and Android SDK](https://developer.android.com/studio). You can follow the instructions [here](https://reactnative.dev/docs/environment-setup) under "React Native CLI Quickstart" section 1. Install Android Studio 
 
 
