@@ -47,7 +47,7 @@ npm start
 
 # or start and clear cache whcih might be helpful
 
-npm start -- --reset-cache
+npm start --reset-cache
 ```
 
 in case of failure that it is missing expo. You can install expo by ruunning the command. and then starting the game again.
